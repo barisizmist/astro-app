@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+    
+const posts = await fetch(`https://api.nuxtjs.dev/posts`).then((response) => response.json());
+console.log(posts)
+---
+<Layout title="About Page">
+    <Card href="/" title="Home Page" body="Go To Home Page"></Card>   
+    {
+        posts.map((i: any) => (
+            <div>{i.title}</div>
+        ))
+    } 
+</Layout>
