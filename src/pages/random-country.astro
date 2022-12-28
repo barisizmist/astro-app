@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = 'Random Country';
+import Country from '../components/Country';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>This astro component has a preact component.</p>
+  <Country client:load />
+</BaseLayout>
